@@ -1,6 +1,11 @@
 import React from "react";
 
 const MovieCard = ({ movie }) => {
+  const handleClick = (movie) => {
+    console.log(movie);
+    window.open(`https://www.imdb.com/title/${movie.imdbID}`, "_blank");
+  }
+
   return (
     <div className="movie">
       <div>
@@ -13,7 +18,7 @@ const MovieCard = ({ movie }) => {
 
       <div>
         <span>{movie.Type}</span>
-        <h3>{movie.Title}</h3>
+        <h3 onClick={() => handleClick(movie)} >{movie.Title}</h3>
       </div>
     </div>
   )
